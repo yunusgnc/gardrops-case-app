@@ -5,6 +5,7 @@ import { searchPosts } from "../../features/filterPost/filterPost";
 import { Link } from "react-router-dom";
 import Spinner from "../spinners/Spinners";
 import { showToast } from "../../services/toastServices";
+import SocialMediaIcons from "../social-media-icons";
 
 export default function HomePageCards() {
   const dispatch = useDispatch();
@@ -122,27 +123,10 @@ export default function HomePageCards() {
                           </p>
                         </div>
                         <div class='social-icons-box'>
-                          <div class='embed w-embed'>
-                            <a
-                              class='w-inline-block social-icon facebook'
-                              href='https://www.facebook.com/sharer/sharer.php?u=&amp;t='
-                              target='_blank'
-                              rel='noopener noreferrer'></a>
-                          </div>
-                          <div class='embed w-embed'>
-                            <a
-                              class='w-inline-block social-icon twitter'
-                              href='https://twitter.com/intent/tweet?'
-                              target='_blank'
-                              rel='noopener noreferrer'></a>
-                          </div>
-                          <div class='embed w-embed'>
-                            <a
-                              class='w-inline-block social-icon email'
-                              href='mailto:?subject=&amp;body=:'
-                              target='_self'
-                              rel='noopener noreferrer'></a>
-                          </div>
+                          <SocialMediaIcons
+                            title={post.title}
+                            body={post.body}
+                          />
                         </div>
                       </div>
                     </div>

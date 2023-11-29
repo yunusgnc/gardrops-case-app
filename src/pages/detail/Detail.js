@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import { FiArrowLeftCircle } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { useSpring, animated } from "react-spring";
+import SocialMediaIcons from "../../components/social-media-icons";
 
 const PostDetail = () => {
   const { postId } = useParams();
@@ -66,27 +67,7 @@ const PostDetail = () => {
           <h1 className='big'>{post.title}</h1>
 
           <div className='social-icons-box'>
-            <div className='embed w-embed'>
-              <a
-                className='w-inline-block social-icon facebook'
-                href='https://www.facebook.com/sharer/sharer.php?u=&t='
-                target='_blank'
-                rel='noopener noreferrer'></a>
-            </div>
-            <div className='embed w-embed'>
-              <a
-                className='w-inline-block social-icon twitter'
-                href='https://twitter.com/intent/tweet?'
-                target='_blank'
-                rel='noopener noreferrer'></a>
-            </div>
-            <div className='embed w-embed'>
-              <a
-                className='w-inline-block social-icon email'
-                href='mailto:?subject=&body=:'
-                target='_self'
-                rel='noopener noreferrer'></a>
-            </div>
+            <SocialMediaIcons title={post.title} body={post.body} />
           </div>
           <div className='authors-box less-padding'>
             <div className='post-details left'>
